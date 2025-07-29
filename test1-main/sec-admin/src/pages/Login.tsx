@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Eye, EyeOff, ArrowLeft } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import { motion } from 'framer-motion';
 
 interface LoginForm {
   email: string;
@@ -40,18 +41,36 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <button
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 py-12 px-4 sm:px-6 lg:px-8"
+    >
+      <motion.div 
+        initial={{ scale: 0.95 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.3 }}
+        className="max-w-md w-full space-y-8"
+      >
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           type="button"
           className="mb-4 flex items-center text-blue-600 hover:text-blue-800"
           onClick={() => navigate('/')}
         >
           <ArrowLeft className="w-6 h-6 mr-2" />
           <span>Back to Home</span>
-        </button>
+        </motion.button>
 
-        <div className="bg-white py-8 px-6 shadow-xl rounded-xl">
+        <motion.div 
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="bg-white py-8 px-6 shadow-xl rounded-xl"
+        >
           <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -129,17 +148,19 @@ const Login: React.FC = () => {
 
           <div className="flex flex-col items-center mt-6">
             <span className="text-gray-600 text-sm mb-2">New user?</span>
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               type="button"
-              onClick={() => window.location.href = '/signup'}
+              onClick={() => navigate('/signup')}
               className="w-full bg-blue-100 text-blue-700 py-2 rounded-lg font-semibold hover:bg-blue-200 transition-colors border border-blue-200 mt-1"
             >
               Sign Up
-            </button>
+            </motion.button>
           </div>
-        </div>
-      </div>
-    </div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

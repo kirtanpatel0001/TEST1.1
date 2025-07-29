@@ -398,8 +398,8 @@ const Header: React.FC = () => {
         {/* Logo */}
         <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate("/")}> 
           <img
-            src="https://static.lenskart.com/media/desktop/img/site-images/main_logo.svg"
-            alt="lenskart"
+            src="https://visioncart.org/wp-content/uploads/2023/02/opticel-logo.png"
+            alt="opticel logo"
             className="h-12 md:h-14 w-auto"
           />
         </div>
@@ -582,19 +582,6 @@ const Header: React.FC = () => {
               )}
             </div>
           ))}
-        </div>
-        {/* 3D TRY ON, BLU, GOLD MAX */}
-        <div className="flex items-center gap-2">
-          <button className="bg-teal-400 text-white px-4 py-2 rounded font-semibold">
-            3D TRY ON
-          </button>
-          <button className="bg-blue-100 text-blue-900 px-4 py-2 rounded font-semibold">
-            BLU
-          </button>
-          <button className="bg-black text-yellow-300 px-4 py-2 rounded font-semibold">
-            GOLD{" "}
-            <span className="text-xs">MAX</span>
-          </button>
         </div>
       </div>
     </header>

@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 import { CartProvider } from './contexts/CartContext';
+import { WishlistProvider } from './contexts/WishlistContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -24,6 +25,7 @@ import Brands from './pages/Brands';
 import Header from './components/Header';
 import Cart from './pages/Cart';
 import ProductDetails from './pages/ProductDetails';
+import Wishlist from './pages/Wishlist';
 
 function AppRoutes() {
   const location = useLocation();
@@ -92,6 +94,7 @@ function AppRoutes() {
         <Route path="/store-locator" element={<StoreLocator />} />
         <Route path="/brands" element={<Brands />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/wishlist" element={<Wishlist />} />
       </Routes>
     </>
   );
@@ -101,10 +104,12 @@ function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <Router>
-          <AppRoutes />
-          <Toaster position="top-right" />
-        </Router>
+        <WishlistProvider>
+          <Router>
+            <AppRoutes />
+            <Toaster position="top-right" />
+          </Router>
+        </WishlistProvider>
       </CartProvider>
     </AuthProvider>
   );

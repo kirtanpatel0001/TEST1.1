@@ -443,9 +443,9 @@ const Home: React.FC = () => {
       {/* Custom Footer Section */}
       <footer className="w-full bg-[#0a0d36] text-white pt-16 pb-8 px-4 font-sans" style={{minWidth:'100vw', position: 'static'}}>
         <div className="max-w-full mx-auto">
-          <h2 className="text-5xl font-light mb-6" style={{letterSpacing: '-1px'}}>Buy The Best Eyewear From Lenskart</h2>
-          <p className="text-lg font-normal leading-relaxed mb-2 text-[#bfc2e2]">Lenskart Is The Leading E-Commerce Portal For Eyewear In India. It Has Revolutionised The Eyewear Industry In The Country With Its Omni-Channel Approach. From An Ever-Growing Number Of Offline Stores Across Major Cities In The Country To Innovative Integration Of Technology While Purchasing Online, Lenskart Caters To Every Customer With Several Deals And Offers.</p>
-          <p className="text-lg font-normal leading-relaxed mb-6 text-[#bfc2e2]">A One-Stop Online Solution For Purchasing Eyewear And Its Accessories, Lenskart Delivers Them Right At Your Doorstep With Convenient Methods Of Payment. <span className="text-[#3ed0c6]">Sunglasses</span> as well as <span className="text-[#3ed0c6]">Eyeglasses</span> Are Available For Men And Women In A Diverse Array Of Styles And Trendy Colours. If You Want To Try Out <span className="text-[#3ed0c6]">Contact Lenses</span>, Pick The Ones Of Your Choice From The Extensive Variety Of Coloured Contact Lenses From Our Online Store.</p>
+          <h2 className="text-5xl font-light mb-6" style={{letterSpacing: '-1px'}}>Buy The Best Eyewear From Vision Cart</h2>
+          <p className="text-lg font-normal leading-relaxed mb-2 text-[#bfc2e2]">Vision Cart Is The Leading E-Commerce Portal For Eyewear In India. It Has Revolutionised The Eyewear Industry In The Country With Its Omni-Channel Approach. From An Ever-Growing Number Of Offline Stores Across Major Cities In The Country To Innovative Integration Of Technology While Purchasing Online, Vision Cart Caters To Every Customer With Several Deals And Offers.</p>
+          <p className="text-lg font-normal leading-relaxed mb-6 text-[#bfc2e2]">A One-Stop Online Solution For Purchasing Eyewear And Its Accessories, Vision Cart Delivers Them Right At Your Doorstep With Convenient Methods Of Payment. <span className="text-[#3ed0c6]">Sunglasses</span> as well as <span className="text-[#3ed0c6]">Eyeglasses</span> Are Available For Men And Women In A Diverse Array Of Styles And Trendy Colours. If You Want To Try Out <span className="text-[#3ed0c6]">Contact Lenses</span>, Pick The Ones Of Your Choice From The Extensive Variety Of Coloured Contact Lenses From Our Online Store.</p>
           <div className="flex flex-col md:flex-row justify-between mt-12 mb-8 gap-8">
             <div>
               <h3 className="text-2xl font-medium mb-4">Services</h3>
@@ -461,7 +461,7 @@ const Home: React.FC = () => {
                 <li>We Are Hiring</li>
                 <li>Refer And Earn</li>
                 <li>About us</li>
-                <li>Lenskart Coupons</li>
+                <li>Vision Cart Coupons</li>
               </ul>
             </div>
             <div>
@@ -477,7 +477,7 @@ const Home: React.FC = () => {
                 <img src="https://static.lenskart.com/media/desktop/img/play-store.svg" alt="Google Play" className="h-12" />
                 <img src="https://static.lenskart.com/media/desktop/img/app-store.svg" alt="App Store" className="h-12" />
               </div>
-              <p className="text-lg text-[#bfc2e2] text-center md:text-right mb-2">Download Lenskart App to buy<br/>Eyeglasses, Sunglasses and Contact Lenses</p>
+              <p className="text-lg text-[#bfc2e2] text-center md:text-right mb-2">Download Vision Cart App to buy<br/>Eyeglasses, Sunglasses and Contact Lenses</p>
             </div>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center border-t border-[#23265a] pt-6 mt-8 gap-4">
