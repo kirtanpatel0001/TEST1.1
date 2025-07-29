@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
+import { CartProvider } from './contexts/CartContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
@@ -22,6 +23,7 @@ import StoreLocator from './pages/StoreLocator';
 import Brands from './pages/Brands';
 import Header from './components/Header';
 import Cart from './pages/Cart';
+import ProductDetails from './pages/ProductDetails';
 
 function AppRoutes() {
   const location = useLocation();
@@ -81,6 +83,7 @@ function AppRoutes() {
           </ProtectedRoute>
         } />
         <Route path="/eyeglasses" element={<Eyeglasses />} />
+        <Route path="/eyeglasses/:id" element={<ProductDetails />} />
         <Route path="/kids-glasses" element={<KidsGlasses />} />
         <Route path="/screen-glasses" element={<ScreenGlasses />} />
         <Route path="/contact-lenses" element={<ContactLenses />} />
@@ -97,10 +100,12 @@ function AppRoutes() {
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <AppRoutes />
-        <Toaster position="top-right" />
-      </Router>
+      <CartProvider>
+        <Router>
+          <AppRoutes />
+          <Toaster position="top-right" />
+        </Router>
+      </CartProvider>
     </AuthProvider>
   );
 }

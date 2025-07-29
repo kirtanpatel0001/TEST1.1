@@ -12,6 +12,7 @@ import analyticsRoutes from './routes/analytics.js';
 import staffRoutes from './routes/staff.js';
 import { errorHandler } from './middleware/errorHandler.js';
 import { seedDatabase } from './seeders/createAdmin.js';
+import path from 'path';
 
 dotenv.config();
 
@@ -35,6 +36,9 @@ app.use(limiter);
 // Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
+
+// Serve images statically for all routes
+app.use('/images', express.static(path.join(process.cwd(), 'public/images')));
 
 // Routes
 app.use('/api/auth', authRoutes);

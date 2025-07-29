@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Phone, Heart, ShoppingCart } from "lucide-react";
 import { useAuth } from "../contexts/AuthContext";
+import { useCart } from '../contexts/CartContext';
 
 const categories = [
   "EYEGLASSES",
@@ -255,6 +256,7 @@ const Header: React.FC = () => {
   const [hoveredCategory, setHoveredCategory] = useState<string | null>(null);
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const { cart } = useCart();
 
   const renderMegaMenu = (category: string) => {
     const data = megaMenuData[category];
@@ -444,6 +446,11 @@ const Header: React.FC = () => {
           <span className="cursor-pointer flex items-center gap-1" onClick={() => navigate('/cart')}>
             <ShoppingCart className="w-5 h-5 mr-1" />
             Cart
+            {cart.length > 0 && (
+              <span className="ml-1 bg-blue-600 text-white rounded-full px-2 py-0.5 text-xs font-bold">
+                {cart.length}
+              </span>
+            )}
           </span>
         </div>
       </div>
